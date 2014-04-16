@@ -1,4 +1,4 @@
-package domain;
+package po;
 
 public class Field {
 	private String fieldId;
