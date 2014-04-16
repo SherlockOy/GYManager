@@ -1,4 +1,4 @@
-package domain;
+package po;
 
 public class Order {
 	private String orderId;
