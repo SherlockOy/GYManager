@@ -1,3 +1,5 @@
 *.jar
 
 Depolyed Resources/
+
+build/
