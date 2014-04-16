@@ -1,6 +1,6 @@
 package dao;
 
-import domain.User;
+import po.User;
 
 public interface IUserDAO {
 
