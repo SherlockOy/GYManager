@@ -7,8 +7,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import po.User;
 import dao.IUserDAO;
-import domain.User;
 
 public class UserDAO implements IUserDAO {
 
