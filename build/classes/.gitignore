@@ -1,7 +1,8 @@
+/.DS_Store
+/action
 /dao
-/service
+/hibernate.cfg.xml
 /po
-<<<<<<< HEAD
+/service
+/struts.xml
 /util
-=======
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
