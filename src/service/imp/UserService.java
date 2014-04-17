@@ -7,7 +7,8 @@ import service.IUserService;
 
 public class UserService implements IUserService {
 
-	private IUserDAO userDAO;
+	private IUserDAO userDAO; //待改回来
+	//private IUserDAO userDAO = new UserDAO(); //for test
 
 	// 使用setter进行注入
 	@Override
@@ -30,7 +31,9 @@ public class UserService implements IUserService {
 	@Override
 	public boolean registerUser(User user) {
 		// TODO Auto-generated method stub
-		if (isUserExist(user.getUserName())) {
+		String name = user.getUserName();
+		boolean judge = isUserExist(name);
+		if (judge) {
 			return false;
 		} else {
 			userDAO.addUser(user);
@@ -49,4 +52,24 @@ public class UserService implements IUserService {
 			return false;
 		}
 	}
+
+//	public static void main(String[] args) {
+//
+//		UserService userService = new UserService();
+//		User testUser = new User();
+//		testUser.setUserName("rocket0");
+//		testUser.setPassWord("123");
+//		testUser.setEmail("oyang716@163.com");
+//
+//		boolean resultOfIsUserExist = userService.isUserExist("testupdate");
+//		boolean resultOfRegisterUser = userService.registerUser(testUser);
+//		boolean resultOFValidateUser = userService.validateUser("testupdate",
+//				"123");
+//
+//		System.out.println(resultOfIsUserExist);
+//		System.out.println(resultOfRegisterUser);
+//		System.out.println(resultOFValidateUser);
+//
+//	}
+
 }
