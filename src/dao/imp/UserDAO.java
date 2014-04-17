@@ -13,6 +13,7 @@ import dao.IUserDAO;
 
 public class UserDAO implements IUserDAO {
 
+	//添加用户
 	@Override
 	public void addUser(User user) {
 		// TODO Auto-generated method stub
@@ -28,7 +29,7 @@ public class UserDAO implements IUserDAO {
 		}
 		HibernateUtil.closeSession();
 	}
-
+	//更新用户
 	@Override
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
@@ -45,7 +46,7 @@ public class UserDAO implements IUserDAO {
 		HibernateUtil.closeSession();
 
 	}
-
+	//删除用户
 	@Override
 	public void deleteUser(User user) {
 		// TODO Auto-generated method stub
@@ -61,7 +62,7 @@ public class UserDAO implements IUserDAO {
 		}
 		HibernateUtil.closeSession();
 	}
-
+	//根据ID获取用户对象
 	@Override
 	public User getUserById(String userId) {
 		// TODO Auto-generated method stub
@@ -70,7 +71,7 @@ public class UserDAO implements IUserDAO {
 		HibernateUtil.closeSession();
 		return user;
 	}
-
+	//根据用户名获取用户对象
 	@Override
 	public User getUserByUserName(String userName) {
 		// TODO Auto-generated method stub
@@ -83,7 +84,7 @@ public class UserDAO implements IUserDAO {
 	/*
 	 * for the test
 	 */
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 
 		User user = new User();
 		user.setUserName("userName");
@@ -91,6 +92,17 @@ public class UserDAO implements IUserDAO {
 
 		UserDAO userDAO = new UserDAO();
 		userDAO.addUser(user);
+		
+		String theId = user.getUserId();
+		User beforeUpdatedUser = userDAO.getUserById(theId);
+		System.out.println("before update is "+beforeUpdatedUser);
+		
+		
+		User updatedUser = userDAO.getUserById(theId);
+		updatedUser.setUserName("testupdate2");
+		userDAO.updateUser(updatedUser);
+		System.out.println("updated user is "+updatedUser);
+		
 	}
-	*/
+	
 }

@@ -26,7 +26,7 @@ public class HibernateUtil {
 		}
 
 	}
-
+	//默认构造方法
 	private HibernateUtil() {
 	}
 
