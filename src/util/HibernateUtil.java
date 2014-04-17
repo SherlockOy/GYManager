@@ -26,11 +26,8 @@ public class HibernateUtil {
 		}
 
 	}
-<<<<<<< HEAD
-	//默认构造方法
-=======
 
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
+	//默认构造方法
 	private HibernateUtil() {
 	}
 

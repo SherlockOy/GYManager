@@ -5,23 +5,14 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-<<<<<<< HEAD
-=======
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
 import po.User;
 import util.HibernateUtil;
 import dao.IUserDAO;
 
 public class UserDAO implements IUserDAO {
 
-<<<<<<< HEAD
 	// 添加用户
-=======
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
 	@Override
 	public void addUser(User user) {
 		// TODO Auto-generated method stub
@@ -78,11 +69,8 @@ public class UserDAO implements IUserDAO {
 	public User getUserById(String userId) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSession();
-<<<<<<< HEAD
 		User user = (User) session.get(User.class, userId);
-=======
-		User user = (User)session.get(User.class, userId);
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
+
 		HibernateUtil.closeSession();
 		return user;
 	}
@@ -92,7 +80,6 @@ public class UserDAO implements IUserDAO {
 	public User getUserByUserName(String userName) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSession();
-<<<<<<< HEAD
 		Query query = session.createQuery("from User where userName = ?");
 		query.setString(0, userName);
 		List list = query.list();
@@ -101,17 +88,11 @@ public class UserDAO implements IUserDAO {
 			return (User) list.get(0);
 		} else
 			return null;
-=======
-		User user = (User)session.get(User.class, userName);
-		HibernateUtil.closeSession();
-		return user;
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
 	}
 
 	/*
 	 * for the test
 	 */
-<<<<<<< HEAD
 
 	// public static void main(String[] args) {
 	//
@@ -135,16 +116,5 @@ public class UserDAO implements IUserDAO {
 	// System.out.println("fetched user is " + fetchUser);
 	//
 	// }
-=======
-	/*public static void main(String[] args) {
 
-		User user = new User();
-		user.setUserName("userName");
-		user.setPassWord("123");
-
-		UserDAO userDAO = new UserDAO();
-		userDAO.addUser(user);
-	}
-	*/
->>>>>>> 3144cb9f37988cac27d110eaaa0f25d6ae87e3c1
 }
