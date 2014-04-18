@@ -58,14 +58,14 @@ public class LoginAction extends ActionSupport {
 	}
 
 	public String execute() throws Exception {
-		if(userService.validateUser(userName, passWord)){
+		if (userService.validateUser(userName, passWord)) {
 			User userInfo = userService.getUserInfo(userName);
 			Map session = ActionContext.getContext().getSession();
 			session.put("userInfo", userInfo);
 			return "SUCCESS";
-		}else{
+		} else {
 			return "ERROR";
 		}
 	}
-	
+
 }
