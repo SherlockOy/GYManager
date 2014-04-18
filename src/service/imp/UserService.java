@@ -7,8 +7,9 @@ import service.IUserService;
 
 public class UserService implements IUserService {
 
-	private IUserDAO userDAO; //待改回来
-	//private IUserDAO userDAO = new UserDAO(); //for test
+	//private IUserDAO userDAO; // 待改回来
+
+	private IUserDAO userDAO = new UserDAO(); //for test
 
 	// 使用setter进行注入
 	@Override
@@ -53,23 +54,35 @@ public class UserService implements IUserService {
 		}
 	}
 
-//	public static void main(String[] args) {
-//
-//		UserService userService = new UserService();
-//		User testUser = new User();
-//		testUser.setUserName("rocket0");
-//		testUser.setPassWord("123");
-//		testUser.setEmail("oyang716@163.com");
-//
-//		boolean resultOfIsUserExist = userService.isUserExist("testupdate");
-//		boolean resultOfRegisterUser = userService.registerUser(testUser);
-//		boolean resultOFValidateUser = userService.validateUser("testupdate",
-//				"123");
-//
-//		System.out.println(resultOfIsUserExist);
-//		System.out.println(resultOfRegisterUser);
-//		System.out.println(resultOFValidateUser);
-//
-//	}
+	@Override
+	public User getUserInfo(String userName) {
+		// TODO Auto-generated method stub
+		User user = userDAO.getUserByUserName(userName);
+		User userInfo = new User();
+
+		userInfo.setUserId(user.getUserId());
+		userInfo.setUserName(userName);
+		userInfo.setEmail(user.getEmail());
+		return userInfo;
+	}
+
+	// public static void main(String[] args) {
+	//
+	// UserService userService = new UserService();
+	// User testUser = new User();
+	// testUser.setUserName("rocket0");
+	// testUser.setPassWord("123");
+	// testUser.setEmail("oyang716@163.com");
+	//
+	// boolean resultOfIsUserExist = userService.isUserExist("testupdate");
+	// boolean resultOfRegisterUser = userService.registerUser(testUser);
+	// boolean resultOFValidateUser = userService.validateUser("testupdate",
+	// "123");
+	//
+	// System.out.println(resultOfIsUserExist);
+	// System.out.println(resultOfRegisterUser);
+	// System.out.println(resultOFValidateUser);
+	//
+	// }
 
 }

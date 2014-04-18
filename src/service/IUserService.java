@@ -17,4 +17,6 @@ public interface IUserService {
 	public boolean validateUser(String userName, String passWord);
 	// 查询订单，返回订单列表
 
+	public User getUserInfo(String userName);
+	
 }

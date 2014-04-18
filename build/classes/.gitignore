@@ -1,8 +1,2 @@
-/.DS_Store
 /action
-/dao
-/hibernate.cfg.xml
-/po
 /service
-/struts.xml
-/util
