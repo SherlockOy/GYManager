@@ -47,7 +47,7 @@ public class UserService implements IUserService {
 	public boolean validateUser(String userName, String passWord) {
 		// TODO Auto-generated method stub
 		User user = userDAO.getUserByUserName(userName);
-		if (user!=null) {
+		if (user != null) {
 			if (user.getPassWord().equals(passWord)) {
 				return true;
 			} else {
