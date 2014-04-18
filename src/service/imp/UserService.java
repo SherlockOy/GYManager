@@ -7,9 +7,9 @@ import service.IUserService;
 
 public class UserService implements IUserService {
 
-	//private IUserDAO userDAO; // 待改回来
+	// private IUserDAO userDAO; // 待改回来
 
-	private IUserDAO userDAO = new UserDAO(); //for test
+	private IUserDAO userDAO = new UserDAO(); // for test
 
 	// 使用setter进行注入
 	@Override
@@ -47,8 +47,12 @@ public class UserService implements IUserService {
 	public boolean validateUser(String userName, String passWord) {
 		// TODO Auto-generated method stub
 		User user = userDAO.getUserByUserName(userName);
-		if (user.getPassWord().equals(passWord)) {
-			return true;
+		if (user!=null) {
+			if (user.getPassWord().equals(passWord)) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			return false;
 		}
