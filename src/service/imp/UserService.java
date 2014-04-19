@@ -14,6 +14,9 @@ public class UserService implements IUserService {
 	//默认构造函数
 	public UserService(){
 	}
+	//带参构造函数，使用Spring时需要
+	public UserService(IUserService userService){
+	}
 	
 	// 使用setter进行注入
 	@Override
