@@ -12,6 +12,10 @@ import dao.IUserDAO;
 
 public class UserDAO implements IUserDAO {
 
+	//默认构造函数
+	public UserDAO(){
+	}
+	
 	// 添加用户
 	@Override
 	public void addUser(User user) {

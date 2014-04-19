@@ -11,6 +11,10 @@ public class UserService implements IUserService {
 
 	private IUserDAO userDAO = new UserDAO(); // for test
 
+	//默认构造函数
+	public UserService(){
+	}
+	
 	// 使用setter进行注入
 	@Override
 	public void setUserDAO(UserDAO userDAO) {
