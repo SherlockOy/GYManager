@@ -15,6 +15,7 @@ public class LoginAction extends ActionSupport {
 	private String userName;
 	private String passWord;
 	private String email;
+	private User user;
 	private IUserService userService = new UserService();
 
 	public String getUserId() {
@@ -47,6 +48,14 @@ public class LoginAction extends ActionSupport {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public IUserService getUserService() {
