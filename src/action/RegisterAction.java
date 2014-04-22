@@ -1,9 +1,12 @@
 package action;
 
+import java.util.Map;
+
 import po.User;
 import service.IUserService;
 import service.imp.UserService;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class RegisterAction extends ActionSupport {
@@ -13,7 +16,7 @@ public class RegisterAction extends ActionSupport {
 	private String passWord;
 	private String email;
 	private IUserService userService = new UserService();
-	private User user;
+	private User user = new User();
 
 	public String getUserId() {
 		return userId;
@@ -74,9 +77,13 @@ public class RegisterAction extends ActionSupport {
 				user.setEmail(email);
 				user.setPassWord(passWord);
 
-				if (userService.registerUser(user))
-					return "RegisterDown";
-				return "RegisterERROR";
+				if (userService.registerUser(user)) {
+					User userInfo = userService.getUserInfo(userName);
+					Map session = ActionContext.getContext().getSession();
+					session.put("userInfo", userInfo);
+					return "RegisterDone";
+				}
+				return "RegisterError";
 			}
 		}
 	}
