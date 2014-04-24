@@ -9,6 +9,9 @@ public class User {
 	private String email;
 	private Set<Order> orders;
 
+	public User() {
+	}
+
 	public String getUserId() {
 		return userId;
 	}

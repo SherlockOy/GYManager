@@ -5,6 +5,9 @@ public class Field {
 	private String item;
 	private String timeSection;
 
+	public Field() {
+	}
+
 	public String getFieldId() {
 		return fieldId;
 	}

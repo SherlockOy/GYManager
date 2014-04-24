@@ -7,6 +7,9 @@ public class Order {
 	private String item;
 	private String subscriber;
 
+	public Order() {
+	}
+
 	public String getOrderId() {
 		return orderId;
 	}
