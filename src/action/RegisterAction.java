@@ -2,9 +2,13 @@ package action;
 
 import java.util.Map;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import po.User;
 import service.IUserService;
 import service.imp.UserService;
+import util.SpringUtil;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,8 +19,8 @@ public class RegisterAction extends ActionSupport {
 	private String userName;
 	private String passWord;
 	private String email;
-	private IUserService userService = new UserService();
 	private User user = new User();
+	private UserService userService;
 
 	public String getUserId() {
 		return userId;
@@ -55,7 +59,7 @@ public class RegisterAction extends ActionSupport {
 	}
 
 	public void setUserService(IUserService userService) {
-		this.userService = userService;
+		this.userService = (UserService) userService;
 	}
 
 	public User getUser() {
@@ -67,6 +71,10 @@ public class RegisterAction extends ActionSupport {
 	}
 
 	public String execute() throws Exception {
+
+		ApplicationContext context =
+			    new ClassPathXmlApplicationContext(new String[] {"applicationContext.xml"});
+		userService = context.getBean("userService", UserService.class);
 		if (userService.isUserExist(userName)) {
 			return "USEREXIST";
 		} else {

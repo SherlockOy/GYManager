@@ -4,14 +4,16 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import po.User;
-import util.HibernateUtil;
 import dao.IUserDAO;
 
 public class UserDAO implements IUserDAO {
 
+	
+	private SessionFactory sessionFactory;
 	//默认构造函数
 	public UserDAO(){
 	}
@@ -20,9 +22,10 @@ public class UserDAO implements IUserDAO {
 	@Override
 	public void addUser(User user) {
 		// TODO Auto-generated method stub
-		Session session = HibernateUtil.getSession();
+		Session session = null;
 		Transaction transaction = null;
 		try {
+			session = sessionFactory.openSession();
 			transaction = session.beginTransaction();
 			session.save(user);
 			transaction.commit();
@@ -30,16 +33,17 @@ public class UserDAO implements IUserDAO {
 			ex.printStackTrace();
 			transaction.rollback();
 		}
-		HibernateUtil.closeSession();
+		session.close();
 	}
 
 	// 更新用户
 	@Override
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		Session session = HibernateUtil.getSession();
+		Session session = null;
 		Transaction transaction = null;
 		try {
+			session = sessionFactory.openSession();
 			transaction = session.beginTransaction();
 			session.update(user);
 			transaction.commit();
@@ -47,7 +51,7 @@ public class UserDAO implements IUserDAO {
 			ex.printStackTrace();
 			transaction.rollback();
 		}
-		HibernateUtil.closeSession();
+		session.close();
 
 	}
 
@@ -55,9 +59,10 @@ public class UserDAO implements IUserDAO {
 	@Override
 	public void deleteUser(User user) {
 		// TODO Auto-generated method stub
-		Session session = HibernateUtil.getSession();
+		Session session = null;
 		Transaction transaction = null;
 		try {
+			session = sessionFactory.openSession();
 			transaction = session.beginTransaction();
 			session.delete(user);
 			transaction.commit();
@@ -65,17 +70,17 @@ public class UserDAO implements IUserDAO {
 			ex.printStackTrace();
 			transaction.rollback();
 		}
-		HibernateUtil.closeSession();
+		session.close();
 	}
 
 	// 根据ID获取用户对象
 	@Override
 	public User getUserById(String userId) {
 		// TODO Auto-generated method stub
-		Session session = HibernateUtil.getSession();
+		Session session = sessionFactory.getCurrentSession();
 		User user = (User) session.get(User.class, userId);
 
-		HibernateUtil.closeSession();
+		session.close();
 		return user;
 	}
 
@@ -83,11 +88,11 @@ public class UserDAO implements IUserDAO {
 	@Override
 	public User getUserByUserName(String userName) {
 		// TODO Auto-generated method stub
-		Session session = HibernateUtil.getSession();
+		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from User where userName = ?");
 		query.setString(0, userName);
 		List list = query.list();
-		HibernateUtil.closeSession();
+		session.close();
 		if (list.size() > 0) {
 			return (User) list.get(0);
 		} else
