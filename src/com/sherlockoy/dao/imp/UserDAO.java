@@ -1,23 +1,30 @@
-package dao.imp;
+package com.sherlockoy.dao.imp;
 
 import java.util.List;
+
+import javax.annotation.Resource;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import po.User;
-import dao.IUserDAO;
+import com.sherlockoy.dao.IUserDAO;
+import com.sherlockoy.po.User;
 
 public class UserDAO implements IUserDAO {
 
-	
-	private SessionFactory sessionFactory;
-	//默认构造函数
-	public UserDAO(){
+	private SessionFactory sessionFactory=null;
+
+	@Resource(name = "sessionFactory")
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
-	
+
+	// 默认构造函数
+	public UserDAO() {
+	}
+
 	// 添加用户
 	@Override
 	public void addUser(User user) {

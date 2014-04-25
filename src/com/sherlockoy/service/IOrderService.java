@@ -1,10 +1,10 @@
-package service;
+package com.sherlockoy.service;
 
 import java.util.List;
 
-import po.Item;
-import po.Order;
-import po.User;
+import com.sherlockoy.po.Item;
+import com.sherlockoy.po.Order;
+import com.sherlockoy.po.User;
 
 public interface IOrderService {
 	// 场地是否可用

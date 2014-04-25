@@ -1,4 +1,4 @@
-package po;
+package com.sherlockoy.po;
 
 public class Field {
 	private String fieldId;

@@ -1,4 +1,4 @@
-package po;
+package com.sherlockoy.po;
 
 public class Order {
 	private String orderId;

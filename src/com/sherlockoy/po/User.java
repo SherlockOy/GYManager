@@ -1,4 +1,4 @@
-package po;
+package com.sherlockoy.po;
 
 import java.util.Set;
 

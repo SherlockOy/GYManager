@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="po.User" table="User">
+    <class name="com.sherlockoy.po.User" table="User">
         <id name="userId" length="32" column="userId" type="java.lang.String">
             <generator class="uuid.hex">
             </generator>

@@ -1,13 +1,12 @@
-package action;
+package com.sherlockoy.action;
 
 import java.util.Map;
 
-import po.User;
-import service.IUserService;
-import service.imp.UserService;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sherlockoy.po.User;
+import com.sherlockoy.service.IUserService;
+import com.sherlockoy.service.imp.UserService;
 
 public class LoginAction extends ActionSupport {
 

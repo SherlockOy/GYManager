@@ -1,7 +1,7 @@
-package service;
+package com.sherlockoy.service;
 
-import po.User;
-import dao.imp.UserDAO;
+import com.sherlockoy.dao.imp.UserDAO;
+import com.sherlockoy.po.User;
 
 public interface IUserService {
 	// 注册防止出现重复用户名

@@ -1,4 +1,4 @@
-package util;
+package com.sherlockoy.util;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

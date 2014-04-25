@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=gbk"%>
 
-<%@page import="java.util.*,po.User"%><html>
+<%@page import="java.util.*,com.sherlockoy.po.User"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css" />

@@ -1,6 +1,6 @@
-package dao;
+package com.sherlockoy.dao;
 
-import po.User;
+import com.sherlockoy.po.User;
 
 public interface IUserDAO {
 

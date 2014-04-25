@@ -1,25 +1,28 @@
-package service.imp;
+package com.sherlockoy.service.imp;
 
-import po.User;
-import dao.IUserDAO;
-import dao.imp.UserDAO;
-import service.IUserService;
+import javax.annotation.Resource;
+
+import com.sherlockoy.dao.IUserDAO;
+import com.sherlockoy.dao.imp.UserDAO;
+import com.sherlockoy.po.User;
+import com.sherlockoy.service.IUserService;
 
 public class UserService implements IUserService {
 
 	// private IUserDAO userDAO; // 待改回来
 
-	private IUserDAO userDAO = new UserDAO(); // for test
+	private IUserDAO userDAO = null; // for test
 
-	//默认构造函数
-	public UserService(){
+	// 默认构造函数
+	public UserService() {
 	}
-	//带参构造函数，使用Spring时需要
-	public UserService(IUserService userService){
+
+	// 带参构造函数，使用Spring时需要
+	public UserService(IUserService userService) {
 	}
-	
+
 	// 使用setter进行注入
-	@Override
+	@Resource(name = "userDAO")
 	public void setUserDAO(UserDAO userDAO) {
 		// TODO Auto-generated method stub
 		this.userDAO = userDAO;
