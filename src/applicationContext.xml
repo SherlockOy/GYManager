@@ -84,5 +84,13 @@
 			<tx:method name="remove*" propagation="REQUIRED"/>
 		</tx:attributes>
 	</tx:advice>
-	 
+	<bean id="userDAO" class="com.sherlockoy.dao.imp.UserDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="userService" class="com.sherlockoy.service.imp.UserService">
+		<property name="userDAO" ref="userDAO" />
+	</bean>
+	<bean id="registerAction" class="com.sherlockoy.action.RegisterAction" scope="prototype">
+		<property name="userServiec" ref="userService" />
+	</bean>
 </beans>
