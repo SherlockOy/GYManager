@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sherlockoy.po.User" table="User">
+        <id name="userId" length="32" column="userId" type="java.lang.String">
+            <generator class="uuid.hex">
+            </generator>
+        </id>
+        <property name="userName" type="java.lang.String" column="userName"
+            length="32" not-null="false" />
+        <property name="passWord" type="java.lang.String" column="passWord"
+            length="256" not-null="true" />
+        <property name="email" type="java.lang.String" column="email"
+            length="256" not-null="false" />
+        <!-- <set name="orders" inverse="true" cascade="all" lazy="true">
+            <key column="subscriber" />
+            <one-to-many class="po.Order" />
+        </set> -->
+    </class>
+</hibernate-mapping>
