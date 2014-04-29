@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
     <wb-module deploy-name="GYManagerWithMaven">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
@@ -6,5 +7,12 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="context-root" value="GYManagerWithMaven"/>
         <property name="java-output-path" value="/GYManagerWithMaven/target/classes"/>
+=======
+    <wb-module deploy-name="GYManager">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="GYManager"/>
+        <property name="java-output-path" value="/GYManager/build/classes"/>
+>>>>>>> db413e89d125efd0d247a408daa191740b6d0905
     </wb-module>
 </project-modules>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="src/main/webapp"/>
 	<classpathentry kind="src" path="target/m2e-wtp/web-resources"/>
+=======
+	<classpathentry kind="src" path="WebContent"/>
+>>>>>>> db413e89d125efd0d247a408daa191740b6d0905
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
 		<attributes>

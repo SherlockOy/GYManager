@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
+<<<<<<< HEAD
   <fixed facet="wst.jsdt.web"/>
   <installed facet="java" version="1.5"/>
   <installed facet="jst.web" version="2.3"/>
+=======
+  <runtime name="J2EE Preview"/>
+  <fixed facet="jst.web"/>
+  <fixed facet="java"/>
+  <fixed facet="wst.jsdt.web"/>
+  <installed facet="java" version="1.7"/>
+  <installed facet="jst.web" version="3.0"/>
+>>>>>>> db413e89d125efd0d247a408daa191740b6d0905
   <installed facet="wst.jsdt.web" version="1.0"/>
 </faceted-project>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>GYManagerWithMaven</name>
+=======
+	<name>GYManager</name>
+>>>>>>> db413e89d125efd0d247a408daa191740b6d0905
 	<comment></comment>
 	<projects>
 	</projects>
@@ -21,11 +25,14 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+=======
+>>>>>>> db413e89d125efd0d247a408daa191740b6d0905
 			<name>org.eclipse.wst.validation.validationbuilder</name>
 			<arguments>
 			</arguments>
@@ -34,9 +41,14 @@
 	<natures>
 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+<<<<<<< HEAD
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+=======
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+>>>>>>> db413e89d125efd0d247a408daa191740b6d0905
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
 </projectDescription>
